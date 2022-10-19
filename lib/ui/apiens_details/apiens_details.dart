@@ -3,19 +3,25 @@ import 'package:nft_ui/widgets/app_glass_button.dart';
 import 'package:nft_ui/widgets/app_white_button.dart';
 import 'package:nft_ui/widgets/curved_screen.dart';
 
-class ApiensDetails extends StatelessWidget {
+class ApiensDetails extends StatefulWidget {
   const ApiensDetails({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    const List<String> apiens = [
-      'assets/images/apiens1.jpg',
-      'assets/images/apiens2.jpg',
-      'assets/images/apiens5.jpg',
-      'assets/images/apiens9.jpg',
-      'assets/images/apiens10.jpg',
-    ];
+  State<ApiensDetails> createState() => _ApiensDetailsState();
+}
 
+class _ApiensDetailsState extends State<ApiensDetails> {
+  bool isFavoriteToggle = false;
+  final List<String> apiens = [
+    'assets/images/apiens1.jpg',
+    'assets/images/apiens2.jpg',
+    'assets/images/apiens5.jpg',
+    'assets/images/apiens9.jpg',
+    'assets/images/apiens10.jpg',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
@@ -34,10 +40,44 @@ class ApiensDetails extends StatelessWidget {
                   const AppGlassButton(icon: Icons.arrow_back_ios_new_rounded),
             ),
           ),
-          const Positioned(
+          Positioned(
             top: 145,
             left: 21,
-            child: AppWhiteButton(icon: Icons.favorite_border_rounded),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isFavoriteToggle = !isFavoriteToggle;
+                });
+              },
+              child: isFavoriteToggle
+                  ? const AppWhiteButton(icon: Icons.favorite_rounded)
+                  : const AppWhiteButton(icon: Icons.favorite_border_rounded),
+            ),
+          ),
+          Positioned(
+            top: 330,
+            left: 21,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Apiens',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 50,
+                  ),
+                ),
+                Text(
+                  'by Kim Limi',
+                  style: TextStyle(
+                    color: Colors.grey.shade200,
+                    fontSize: 21,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
