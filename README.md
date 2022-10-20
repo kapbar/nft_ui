@@ -1,12 +1,10 @@
 # NFT UI
 
 <p>
-<img src="images/photo_2022-09-21_04-39-52.jpg" width = 240>
-<img src="images/photo_2022-09-21_04-40-17.jpg" width = 240>
-<img src="images/photo_2022-09-21_04-40-21.jpg" width = 240>
-<img src="images/photo_2022-09-21_04-40-26.jpg" width = 240>
-<img src="images/photo_2022-09-21_04-40-29.jpg" width = 240>
-<img src="images/photo_2022-09-21_04-40-31.jpg" width = 240>
+<img src="images/Screenshot_1666278004.png" width = 240>
+<img src="images/Screenshot_1666278031.png" width = 240>
+<img src="images/Screenshot_1666278041.png" width = 240>
+<img src="images/Screenshot_1666278052.png" width = 240>
   </p>
 
 A new Flutter project.
